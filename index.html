@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting Firm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: rgb(46, 52, 105);
+            --star-color: rgb(230, 186, 102);
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            font-weight: 400;
+            color: var(--primary-color);
+            padding: 1em 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 200px;
+            position: relative;
+        }
+
+        .logo {
+            width: 100%;
+            height: 0px;
+            font-size: 50px;
+            color: var(--star-color);
+            margin-top: -40px;
+            padding: none;
+        }
+
+        h1 {
+            margin: 0;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            margin-top: 70px;
+            padding: none;
+        }
+
+        nav {
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        #home {
+            display: flex;
+            justify-content: space-between;
+            min-height: 500px;
+            background: var(--primary-color);
+            color: white;
+        }
+
+        #book-keeping {
+            display: flex;
+            min-height: 600px;
+            background-image: url(bookkeeping.jpg);
+            background-position: center;
+            background-size: cover;
+            color: white;
+        }
+
+        #payroll {
+            display: flex;
+            min-height: 600px;
+            background-image: url(payroll.png);
+            background-position: center;
+            background-size: cover;
+            color: white;
+        }
+
+        .contact-button {
+            border: 2px solid var(--star-color);
+            border-radius: 7px;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .contact-button:hover {
+            background: var(--star-color);
+            color: var(--primary-color);
+            transition: ease-in-out 0.4s;
+        }
+
+        .column {
+            flex: 1;
+            text-align: left;
+            padding: 70px 50px 20px 50px;
+            max-width: 50%;
+        }
+
+        .column:nth-child(2) {
+            background-image: url(HomeImage.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .column-1 {
+            flex: 1;
+            text-align: left;
+            padding: 70px 50px 20px 50px;
+            max-width: 50%;
+        }
+
+        .column-1:nth-child(2) {
+            background-color: var(--primary-color);
+        }
+
+        .column-2 {
+            flex: 1;
+            text-align: left;
+            padding: 70px 50px 20px 50px;
+            max-width: 50%;
+        }
+
+        .column-2:nth-child(2) {
+            background-image: url(taxation.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #services {
+            text-align: center;
+            margin: 50px 0px 50px 0px;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 40px;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            font-size: 30px;
+            color: var(--primary-color);
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            height: 250px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            background-size: 100%;
+            transition: background-size 0.4s ease-in-out;
+            background-repeat: no-repeat;
+        }
+
+        .service-card h3 {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            top: 0px;
+            left: 0;
+        }
+
+        .service-card:hover {
+            background-size: 110%;
+        }
+
+        .service-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: var(--star-color);
+            color: var(--primary-color);
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .service-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(230, 186, 102, 0.5);
+        }
+
+        .service-link {
+            text-decoration: none;
+        }
+
+        #taxation {
+            display: flex;
+            justify-content: space-between;
+            min-height: 500px;
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .contact-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .contact-form div {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            background-color: #2e3469;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--star-color);
+            color: var(--primary-color);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <p>&#9733</p>
+        </div>
+        <h1>A Star Accounting</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="column">
+            <h2>Welcome to A &#9733 Accounting</h2>
+            <p>A* Accounting offers tailored, professional accounting services for individuals and small to medium-sized enterprises (SMEs).</p>
+            <p>Our team is composed of highly qualified professionals with extensive experience in the field. All members hold relevant accounting qualifications and are accredited by the Association of Accounting Technicians (AAT) and the International Association of Bookkeepers (IAB). Additionally, we are fully licensed by the AAT.</p>
+            <p>Whether you're launching a start-up or managing an established business, we simplify your accounting needs, so you can focus on what matters most—growing your business.</p>
+            <a class="contact-button" href="#contact">Contact Us</a>
+        </div>
+        <div class="column">
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="service-title">Our Services</h2>
+        <div class="service-container">
+            <a href="#book-keeping" class="service-link">
+                <div class="service-card" style="background-image: url(service-card3.png);">
+                    <h3>Bookkeeping</h3>
+                    <button class="service-button">Learn More</button>
+                </div>
+            </a>
+            <a href="#taxation" class="service-link">
+                <div class="service-card" style="background-image: url(service-card2.png);">
+                    <h3>Taxation</h3>
+                    <button class="service-button">Learn More</button>
+                </div>
+            </a>
+            <a href="#payroll" class="service-link">
+                <div class="service-card" style="background-image: url(service-card1.png);">
+                    <h3>Payroll</h3>
+                    <button class="service-button">Learn More</button>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="book-keeping">
+        <div class="column-1">
+        </div>
+        <div class="column-1">
+            <h2>Book-keeping</h2>
+            <p>A* accounting offers manual and computerised book-keeping services.</p>
+            <p>Our computerised book-keeping uses the latest accounting software giving an efficient and cost-effective solution. Up-to-date reports can be produced on request enabling clients to monitor the financial progress of their business.</p>
+            <p>Regular book-keeping improves credit control, reduces preparation time for quarterly VAT returns, and reduces the cost of year-end accounts.</p>
+            <a class="contact-button" href="#contact">Contact Us</a>
+        </div>
+    </section>
+
+    <section id="taxation">
+        <div class="column-2">
+            <h2>Taxation Services</h2>
+            <p>A* accounting's taxation services include:
+                <ul>
+                    <li>Personal income tax returns</li>
+                    <li>Partnership tax returns</li>
+                    <li>Corporation tax returns</li>
+                </ul>
+                These are submitted to the Inland Revenue online, reducing paperwork and increasing efficiency.
+            </p>
+            <a class="contact-button" href="#contact">Contact Us</a>
+        </div>
+        <div class="column-2">
+        </div>
+    </section>
+
+    <section id="payroll">
+        <div class="column-1">
+        </div>
+        <div class="column-1">
+            <h2>Payroll Services</h2>
+            <p>A* accounting offers computerised payroll services and generates high-quality payslips for employees.</p>
+            <p>We ensure that all obligations to the Inland Revenue regarding payroll liabilities are met within the set time scales.</p>
+            <p>All annual PAYE returns are submitted to the Inland Revenue online. On-line submission will be mandatory by 2010, and by filing online before this date, employers attract incentive payments.</p>
+            <a class="contact-button" href="#contact">Contact Us</a>
+        </div>
+    </section>
+
+    <section class="contact-form" id="contact">
+        <div>
+            <h2 class="contact-title">Contact Us</h2>
+            <form>
+                <div>
+                    <label>Name</label>
+                    <input type="text" id="name" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Accounting Firm. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
